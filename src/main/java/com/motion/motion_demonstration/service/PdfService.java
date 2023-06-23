@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Service
@@ -21,7 +21,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("one"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("one.pdf"));
 
         // 첫 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(1);
@@ -31,9 +31,16 @@ public class PdfService {
         contentByte.setFontAndSize(baseFont, 12);
 
         // 현재 날짜, 시간 가져오기
-        LocalDate now = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd/HH/mm/ss");
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        String formattedNow = now.format(formatter);
 
+        // 필요한 글자 넣기
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(0, 4), 213, 163, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(4, 6), 252, 163, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(6, 8), 283, 163, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(8, 10), 314, 163, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(10, 12), 345, 163, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 250, 93, 0);
 
         stamper.close();
