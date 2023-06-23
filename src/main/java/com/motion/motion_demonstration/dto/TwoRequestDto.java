@@ -13,6 +13,7 @@ public class TwoRequestDto {
     private String time;
     private String location;
     private String distance;
+    private String region;
     private String wind;
     private String stdnoise;
     private String noise;
