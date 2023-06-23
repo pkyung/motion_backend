@@ -24,7 +24,7 @@ public class PdfController {
     }
 
     @PostMapping("/two")
-    public void twoDownload(@RequestBody TwoRequestDto dto) throws IOException {
-
+    public void twoDownload(@RequestBody TwoRequestDto dto) throws DocumentException, IOException {
+        pdfService.twoManipulate(dto);
     }
 }
