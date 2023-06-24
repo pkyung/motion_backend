@@ -103,7 +103,7 @@ public class PdfService {
         // 수정된 파일 이름
         PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("three.pdf"));
 
-        // 첫 장을 수정할 것
+        // 세번째 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(3);
 
         // 폰트 지정
