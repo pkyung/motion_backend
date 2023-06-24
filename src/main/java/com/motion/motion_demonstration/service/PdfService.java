@@ -76,10 +76,10 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(6, 8), 283, 379, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(8, 10), 314, 379, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(10, 12), 345, 379, 0);
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 220, 311, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 230, 311, 0);
 
         // 폰트 크기 바꾸기
-        contentByte.setFontAndSize(baseFont, 15);
+        contentByte.setFontAndSize(baseFont, 14);
 
         // 필요한 글자 넣기
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 665, 0);
