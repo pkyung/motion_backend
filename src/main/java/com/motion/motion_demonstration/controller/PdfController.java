@@ -2,6 +2,7 @@ package com.motion.motion_demonstration.controller;
 
 import com.itextpdf.text.DocumentException;
 import com.motion.motion_demonstration.dto.OneRequestDto;
+import com.motion.motion_demonstration.dto.ThreeRequestDto;
 import com.motion.motion_demonstration.dto.TwoRequestDto;
 import com.motion.motion_demonstration.service.PdfService;
 import com.motion.motion_demonstration.service.PdfToImgService;
@@ -54,6 +55,25 @@ public class PdfController {
         Path filePath = Paths.get("./two.png");
         Resource resource = new InputStreamResource(Files.newInputStream(filePath));
         File file = new File("./two.png");
+
+        HttpHeaders headers = new HttpHeaders();
+        String contentType = Files.probeContentType(filePath);
+
+        // 다운로드 되거나 로컬에 저장되는 용도로 쓰이는지 알려주는 헤더
+        headers.setContentDisposition(ContentDisposition.builder("attachment").filename(file.getName()).build());
+        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
+        return new ResponseEntity<Object>(resource, headers, HttpStatus.OK);
+    }
+
+    @PostMapping("/three")
+    public ResponseEntity<Object> threeDownload(@RequestBody ThreeRequestDto dto)
+            throws DocumentException, IOException {
+        pdfService.threeManipulate(dto);
+        pdfToImgService.pdfToImg(new FileInputStream(new File("./three.pdf")), 2, "three.png");
+
+        Path filePath = Paths.get("./three.png");
+        Resource resource = new InputStreamResource(Files.newInputStream(filePath));
+        File file = new File("./three.png");
 
         HttpHeaders headers = new HttpHeaders();
         String contentType = Files.probeContentType(filePath);
