@@ -83,7 +83,7 @@ public class PdfService {
         // 필요한 글자 넣기
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 665, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 465, 665, 0);
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 290, 640, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 330, 640, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 240, 615, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 465, 615, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 160, 588, 0);
