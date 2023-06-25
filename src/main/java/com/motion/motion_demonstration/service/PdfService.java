@@ -43,7 +43,12 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(6, 8), 283, 163, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(8, 10), 314, 163, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(10, 12), 345, 163, 0);
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 250, 93, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 270, 93, 0);
+
+        contentByte.setFontAndSize(baseFont, 13);
+
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getEquinoise(), 200, 697, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getMaxnoise(), 210, 665, 0);
 
         stamper.close();
         reader.close();
