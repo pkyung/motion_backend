@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class OneRequestDto {
 
     private String name;
+    private String equinoise;
+    private String maxnoise;
 }
