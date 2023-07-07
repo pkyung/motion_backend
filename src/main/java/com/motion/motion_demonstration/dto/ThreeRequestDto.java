@@ -17,4 +17,5 @@ public class ThreeRequestDto {
     private String stdnoise;
     private String noise;
     private String name;
+    private String currenttime;
 }

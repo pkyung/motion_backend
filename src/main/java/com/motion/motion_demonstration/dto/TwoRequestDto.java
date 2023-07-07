@@ -18,5 +18,6 @@ public class TwoRequestDto {
     private String stdnoise;
     private String noise;
     private String name;
+    private String currenttime;
 
 }
