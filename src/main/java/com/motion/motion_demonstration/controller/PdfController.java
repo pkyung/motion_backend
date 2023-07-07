@@ -31,7 +31,10 @@ public class PdfController {
 
     @PostMapping("/one")
     public ResponseEntity<Object> oneDownload(@RequestBody OneRequestDto dto) throws DocumentException, IOException {
+        // 현재 시간 == 나중에 불러올 때도 사용되는 시간
         String currentTime = dto.getCurrenttime();
+
+        // 만약 이미지가 없으면 이미지 제작
         String fileExist = "./image/one" + currentTime + ".png";
         File exist = new File(fileExist);
         if (!exist.exists()) {
