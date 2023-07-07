@@ -31,12 +31,16 @@ public class PdfController {
 
     @PostMapping("/one")
     public ResponseEntity<Object> oneDownload(@RequestBody OneRequestDto dto) throws DocumentException, IOException {
-        pdfService.oneManipulate(dto);
-        pdfToImgService.pdfToImg(new FileInputStream(new File("./one.pdf")), 0, "one.png");
-
-        Path filePath = Paths.get("./one.png");
+        String currentTime = dto.getCurrenttime();
+        String fileExist = "./image/one" + currentTime + ".png";
+        File exist = new File(fileExist);
+        if (!exist.exists()) {
+            pdfService.oneManipulate(dto);
+            pdfToImgService.pdfToImg(new FileInputStream(new File("./image/one" + currentTime + ".pdf")), 0, "./image/one" + currentTime + ".png");
+        }
+        Path filePath = Paths.get("./image/one" + currentTime + ".png");
         Resource resource = new InputStreamResource(Files.newInputStream(filePath));
-        File file = new File("./one.png");
+        File file = new File("./image/one" + currentTime + ".png");
 
         HttpHeaders headers = new HttpHeaders();
         String contentType = Files.probeContentType(filePath);
@@ -49,12 +53,17 @@ public class PdfController {
 
     @PostMapping("/two")
     public ResponseEntity<Object> twoDownload(@RequestBody TwoRequestDto dto) throws DocumentException, IOException {
-        pdfService.twoManipulate(dto);
-        pdfToImgService.pdfToImg(new FileInputStream(new File("./two.pdf")), 1, "two.png");
+        String currentTime = dto.getCurrenttime();
+        String fileExist = "./image/two" + currentTime + ".png";
+        File exist = new File(fileExist);
+        if (!exist.exists()) {
+            pdfService.twoManipulate(dto);
+            pdfToImgService.pdfToImg(new FileInputStream(new File("./image/two" + currentTime + ".pdf")), 1, "./image/two" + currentTime + ".png");
+        }
 
-        Path filePath = Paths.get("./two.png");
+        Path filePath = Paths.get("./image/two" + currentTime + ".png");
         Resource resource = new InputStreamResource(Files.newInputStream(filePath));
-        File file = new File("./two.png");
+        File file = new File("./image/two" + currentTime + ".png");
 
         HttpHeaders headers = new HttpHeaders();
         String contentType = Files.probeContentType(filePath);
@@ -68,12 +77,16 @@ public class PdfController {
     @PostMapping("/three")
     public ResponseEntity<Object> threeDownload(@RequestBody ThreeRequestDto dto)
             throws DocumentException, IOException {
-        pdfService.threeManipulate(dto);
-        pdfToImgService.pdfToImg(new FileInputStream(new File("./three.pdf")), 2, "three.png");
-
-        Path filePath = Paths.get("./three.png");
+        String currentTime = dto.getCurrenttime();
+        String fileExist = "./image/three" + currentTime + ".png";
+        File exist = new File(fileExist);
+        if (!exist.exists()) {
+            pdfService.threeManipulate(dto);
+            pdfToImgService.pdfToImg(new FileInputStream(new File("./image/three" + currentTime + ".pdf")), 2, "./image/three" + currentTime + ".png");
+        }
+        Path filePath = Paths.get("./image/three" + currentTime + ".png");
         Resource resource = new InputStreamResource(Files.newInputStream(filePath));
-        File file = new File("./three.png");
+        File file = new File("./image/three" + currentTime + ".png");
 
         HttpHeaders headers = new HttpHeaders();
         String contentType = Files.probeContentType(filePath);

@@ -17,12 +17,14 @@ public class PdfService {
 
     public void oneManipulate(OneRequestDto dto) throws DocumentException, IOException {
 
+        String currentTime = dto.getCurrenttime();
+
         // 원본 파일 읽기 - resources 폴더 안에 있음
         ClassPathResource resource = new ClassPathResource("file.pdf");
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("one.pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/one" + currentTime + ".pdf"));
 
         // 첫 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(1);
@@ -52,13 +54,14 @@ public class PdfService {
     }
 
     public void twoManipulate(TwoRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
 
         // 원본 파일 읽기 - resources 폴더 안에 있음
         ClassPathResource resource = new ClassPathResource("file.pdf");
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("two.pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/two" + currentTime + ".pdf"));
 
         // 두번째 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(2);
@@ -96,12 +99,13 @@ public class PdfService {
     }
 
     public void threeManipulate(ThreeRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
         // 원본 파일 읽기 - resources 폴더 안에 있음
         ClassPathResource resource = new ClassPathResource("file.pdf");
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("three.pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/three" + currentTime + ".pdf"));
 
         // 세번째 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(3);
