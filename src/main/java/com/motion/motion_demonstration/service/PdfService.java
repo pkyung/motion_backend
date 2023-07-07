@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 @Service
 public class PdfService {
@@ -33,9 +32,7 @@ public class PdfService {
         contentByte.setFontAndSize(baseFont, 12);
 
         // 현재 날짜, 시간 가져오기
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        String formattedNow = now.format(formatter);
+        String formattedNow = dto.getCurrenttime();
 
         // 필요한 글자 넣기
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(0, 4), 213, 163, 0);
@@ -71,9 +68,7 @@ public class PdfService {
         contentByte.setFontAndSize(baseFont, 12);
 
         // 현재 날짜, 시간 가져오기
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        String formattedNow = now.format(formatter);
+        String formattedNow = dto.getCurrenttime();
 
         // 필요한 글자 넣기
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(0, 4), 213, 379, 0);
@@ -116,9 +111,7 @@ public class PdfService {
         contentByte.setFontAndSize(baseFont, 12);
 
         // 현재 날짜, 시간 가져오기
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        String formattedNow = now.format(formatter);
+        String formattedNow = dto.getCurrenttime();
 
         // 필요한 글자 넣기
         // 고지일
