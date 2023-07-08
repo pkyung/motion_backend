@@ -37,3 +37,6 @@ out/
 .vscode/
 
 /src/main/resources/file.pdf
+
+### 폴더 무시 ###
+image/

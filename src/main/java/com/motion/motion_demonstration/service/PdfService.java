@@ -2,9 +2,7 @@ package com.motion.motion_demonstration.service;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
-import com.motion.motion_demonstration.dto.OneRequestDto;
-import com.motion.motion_demonstration.dto.ThreeRequestDto;
-import com.motion.motion_demonstration.dto.TwoRequestDto;
+import com.motion.motion_demonstration.dto.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
@@ -142,4 +140,212 @@ public class PdfService {
         stamper.close();
         reader.close();
     }
+
+    public void fourManipulate(FourRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 원본 파일 읽기 - resources 폴더 안에 있음
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/four" + currentTime + ".pdf"));
+
+        // 네번째 장을 수정할 것
+        PdfContentByte contentByte = stamper.getOverContent(4);
+
+        // 폰트 지정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜, 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+    }
+
+    public void fiveManipulate(FiveRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/five" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(5);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+// 반복해서 six, seven, eight, nine, ten, eleven, twelve에 대한 코드를 추가합니다.
+
+    public void sixManipulate(SixRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/six" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(6);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+
+    public void sevenManipulate(SevenRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/seven" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(7);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+    public void eightManipulate(EightRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/eight" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(8);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+    public void nineManipulate(NineRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/nine" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(9);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+    public void tenManipulate(TenRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/ten" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(10);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+    public void elevenManipulate(ElevenRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/eleven" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(11);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
+    public void twelveManipulate(TwelveRequestDto dto) throws DocumentException, IOException {
+        String currentTime = dto.getCurrenttime();
+        // 소스 파일 읽기 - 리소스 폴더에 위치
+        ClassPathResource resource = new ClassPathResource("file.pdf");
+        PdfReader reader = new PdfReader(resource.getInputStream());
+
+        // 수정된 파일 이름
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/twelve" + currentTime + ".pdf"));
+
+        // 세 번째 챕터 편집
+        PdfContentByte contentByte = stamper.getOverContent(12);
+
+        // 폰트 설정
+        BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        contentByte.setFontAndSize(baseFont, 12);
+
+        // 현재 날짜와 시간 가져오기
+        String formattedNow = dto.getCurrenttime();
+
+        stamper.close();
+        reader.close();
+    }
+
 }
