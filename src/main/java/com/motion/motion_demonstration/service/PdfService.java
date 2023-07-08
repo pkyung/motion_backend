@@ -22,7 +22,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/one" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/one" + currentTime + ".pdf"));
 
         // 첫 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(1);
@@ -59,7 +59,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/two" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/two" + currentTime + ".pdf"));
 
         // 두번째 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(2);
@@ -103,7 +103,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/three" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/three" + currentTime + ".pdf"));
 
         // 세번째 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(3);
@@ -148,7 +148,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/four" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/four" + currentTime + ".pdf"));
 
         // 네번째 장을 수정할 것
         PdfContentByte contentByte = stamper.getOverContent(4);
@@ -168,7 +168,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/five" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/five" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(5);
@@ -193,7 +193,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/six" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/six" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(6);
@@ -217,7 +217,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/seven" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/seven" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(7);
@@ -240,7 +240,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/eight" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/eight" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(8);
@@ -263,7 +263,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/nine" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/nine" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(9);
@@ -286,7 +286,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/ten" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/ten" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(10);
@@ -309,7 +309,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/eleven" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/eleven" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(11);
@@ -332,7 +332,7 @@ public class PdfService {
         PdfReader reader = new PdfReader(resource.getInputStream());
 
         // 수정된 파일 이름
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("./image/twelve" + currentTime + ".pdf"));
+        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream("image/twelve" + currentTime + ".pdf"));
 
         // 세 번째 챕터 편집
         PdfContentByte contentByte = stamper.getOverContent(12);
