@@ -418,10 +418,59 @@ public class PdfService {
 
             // 폰트 설정
             BaseFont baseFont = BaseFont.createFont("malgun.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            contentByte.setFontAndSize(baseFont, 12);
+            contentByte.setFontAndSize(baseFont, 11);
 
             // 현재 날짜와 시간 가져오기
             String formattedNow = dto.getCurrenttime();
+
+            // 필요한 글자 넣기
+            // 고지일
+            // 이름
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(0, 4), 215, 131, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(4, 6), 252, 131, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(6, 8), 283, 131, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(8, 10), 314, 131, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(10, 12), 345, 131, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 228, 68, 0);
+
+            // 데모 배열
+            Demo[] demos = dto.getDemo();
+            for (int i = 0; i < demos.length; ++i) {
+                Demo demo = demos[i];
+                contentByte.setColorFill(BaseColor.BLACK);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getCnt(), 185, 656 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getCaltime(), 355, 656 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getTime(), 490, 656 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getLocation(), 350, 638 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance(), 247, 620 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getRegion(), 467, 620 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getWind(), 160, 598 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getStdnoise(), 324, 604 - i * 88, 0);
+
+                contentByte.setColorFill(BaseColor.RED);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getNoise(), 493, 598 - i * 88, 0);
+            }
+
+            // 검은색으로 변경
+            contentByte.setColorFill(BaseColor.BLACK);
+
+            // 품목 배열
+            Item[] items = dto.getItem();
+            for (int i = 0; i < items.length; ++i) {
+                Item item = items[i];
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getItemname(), 150, 324 - 17 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getCnt(), 216, 324 - 17 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getSig(), 329, 324 - 17 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getStorage(), 472, 324 - 17 * i, 0);
+            }
+
+            // 기타 조치 배열
+            Action[] actions = dto.getAction();
+            for (int i = 0; i < actions.length; ++i) {
+                Action action = actions[i];
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, action.getActionetc(), 317, 234 - 17 * i, 0);
+            }
+
 
             stamper.close();
             reader.close();
