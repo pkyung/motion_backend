@@ -196,10 +196,10 @@ public class PdfController {
         String currentTime = dto.getCurrenttime();
         String fileExist = "image/eight" + currentTime + ".png";
         File exist = new File(fileExist);
-        if (!exist.exists()) {
+//        if (!exist.exists()) {
             pdfService.eightManipulate(dto);
             pdfToImgService.pdfToImg(new FileInputStream(new File("image/eight" + currentTime + ".pdf")), 7, "image/eight" + currentTime + ".png");
-        }
+//        }
         Path filePath = Paths.get("image/eight" + currentTime + ".png");
         Resource resource = new InputStreamResource(Files.newInputStream(filePath));
         File file = new File("image/eight" + currentTime + ".png");
