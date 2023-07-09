@@ -381,7 +381,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 326, 631, 0); // 기준 소음도
 
         contentByte.setColorFill(BaseColor.RED);
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 492, 624, 0); // 측정 소음도
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getNoise(), 492, 624, 0); // 측정 소음도
 
         contentByte.setFontAndSize(baseFont, 10);
         contentByte.setColorFill(BaseColor.BLACK);
@@ -494,6 +494,57 @@ public class PdfService {
 
             // 현재 날짜와 시간 가져오기
             String formattedNow = dto.getCurrenttime();
+
+            // 필요한 글자 넣기
+            // 고지일
+            // 이름
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(0, 4), 215, 158, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(4, 6), 252, 158, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(6, 8), 283, 158, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(8, 10), 314, 158, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(10, 12), 345, 158, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 233, 90, 0);
+
+            // 시위 정보
+            contentByte.setFontAndSize(baseFont, 13);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 595, 0); // 측정시간
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 463, 595, 0); // 시간대
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 350, 575, 0); // 측정 위치
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 239, 556, 0); // 측정 거리
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 464, 556, 0); // 대상지역
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getNoisedivision(), 350, 535, 0); // 소음도 구분
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 159, 511, 0); // 풍속
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 326, 517, 0); // 기준 소음도
+
+            contentByte.setColorFill(BaseColor.RED);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getNoise(), 492, 511, 0); // 측정 소음도
+
+            // 검은색 변환
+            // 폰트 크기 변환
+            contentByte.setColorFill(BaseColor.BLACK);
+            contentByte.setFontAndSize(baseFont, 12);
+            // 품목 배열
+            Item[] items = dto.getItem();
+            for (int i = 0; i < items.length; ++i) {
+                Item item = items[i];
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getItemname(), 150, 392 - 20 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getCnt(), 216, 392 - 20 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getSig(), 329, 392 - 20 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getStorage(), 472, 392 - 20 * i, 0);
+            }
+
+            // 기타 조치 배열
+            Action[] actions = dto.getAction();
+            for (int i = 0; i < actions.length; ++i) {
+                Action action = actions[i];
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, action.getActionetc(), 317, 279 - 22 * i, 0);
+            }
+
+            // 폰트 크기 변경
+            contentByte.setFontAndSize(baseFont, 13);
+
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getHour(), 372, 729, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getMinute(), 420, 729, 0);
 
             stamper.close();
             reader.close();
