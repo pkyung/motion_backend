@@ -21,7 +21,6 @@ public class ElevenRequestDto {
     String distance;
     String region;
     String wind;
-    String stdnoise;
     String noise;
     String currenttime;
     String name;
