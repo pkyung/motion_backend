@@ -643,6 +643,26 @@ public class PdfService {
             // 현재 날짜와 시간 가져오기
             String formattedNow = dto.getCurrenttime();
 
+            // 필요한 글자 넣기
+            // 고지일
+            // 이름
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(0, 4), 215, 222, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(4, 6), 252, 222, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(6, 8), 283, 222, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(8, 10), 314, 222, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, formattedNow.substring(10, 12), 345, 222, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 235, 140, 0);
+
+            // 품목 배열
+            Item[] items = dto.getItem();
+            for (int i = 0; i < items.length; ++i) {
+                Item item = items[i];
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getItemname(), 150, 626 - 21 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getCnt(), 216, 626 - 21 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getSig(), 329, 626 - 21 * i, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, item.getStorage(), 472, 626 - 21 * i, 0);
+            }
+
             stamper.close();
             reader.close();
         }
