@@ -177,7 +177,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getName(), 216, 296, 0); // 주최자명
 
         Demo[] demos = dto.getDemo(); // 각 회차의 데모 배열
-        contentByte.setFontAndSize(baseFont, 14);
+        contentByte.setFontAndSize(baseFont, 12);
         for (int i = 0; i < 3; ++i) {
             Demo demo = demos[i];
             contentByte.setColorFill(BaseColor.BLACK);
