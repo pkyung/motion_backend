@@ -89,7 +89,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 665, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 465, 665, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 330, 640, 0);
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 240, 615, 0);
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 240, 615, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 465, 615, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 160, 588, 0);
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 326, 593, 0);
@@ -136,7 +136,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 667, 0); // 측정시간
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 465, 667, 0); // 시간대
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 350, 640, 0); // 측정 위치
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 242, 615, 0); // 측정 거리
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 242, 615, 0); // 측정 거리
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 465, 615, 0); // 대상지역
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 160, 585, 0); // 풍속
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 326, 593, 0); // 기준 소음도 (dB)
@@ -185,7 +185,7 @@ public class PdfService {
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getCaltime(), 355, 693 - i * 84, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getTime(), 490, 693 - i * 84, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getLocation(), 350, 675 - i * 84, 0);
-            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance(), 247, 660 - i * 84, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance() + " m", 247, 660 - i * 84, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getRegion(), 465, 660 - i * 84, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getWind(), 160, 637 - i * 84, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getStdnoise(), 324, 644 - i * 84, 0);
@@ -233,7 +233,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 621, 0); // 측정시간
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 460, 621, 0); // 시간대
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 353, 603, 0); // 측정 위치
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 237, 583, 0); // 측정 거리
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 237, 583, 0); // 측정 거리
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 463, 583, 0); // 대상지역
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getNoisedivision(), 244, 563, 0); // 소음도 구분
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 160, 536, 0); // 풍속
@@ -280,7 +280,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 239, 656, 0); // 측정시간
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 462, 656, 0); // 시간대
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 352, 632, 0); // 측정 위치
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 238, 611, 0); // 측정 거리
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 238, 611, 0); // 측정 거리
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 466, 611, 0); // 대상지역
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 158, 582, 0); // 풍속
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 325, 590, 0); // 기준 소음도
@@ -330,7 +330,7 @@ public class PdfService {
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getCaltime(), 355, 686 - i * 79, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getTime(), 490, 686 - i * 79, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getLocation(), 350, 672 - i * 79, 0);
-            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance(), 247, 656 - i * 79, 0);
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance() + " m", 247, 656 - i * 79, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getRegion(), 467, 656 - i * 80, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getWind(), 160, 637 - i * 79, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getStdnoise(), 324, 644 - i * 79, 0);
@@ -375,7 +375,7 @@ public class PdfService {
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 689, 0); // 측정시간
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 463, 689, 0); // 시간대
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 350, 670, 0); // 측정 위치
-        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 239, 651, 0); // 측정 거리
+        contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 239, 651, 0); // 측정 거리
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 464, 651, 0); // 대상지역
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 159, 624, 0); // 풍속
         contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getStdnoise(), 326, 631, 0); // 기준 소음도
@@ -442,7 +442,7 @@ public class PdfService {
                 contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getCaltime(), 355, 656 - i * 88, 0);
                 contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getTime(), 490, 656 - i * 88, 0);
                 contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getLocation(), 350, 638 - i * 88, 0);
-                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance(), 247, 620 - i * 88, 0);
+                contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getDistance() + " m", 247, 620 - i * 88, 0);
                 contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getRegion(), 467, 620 - i * 88, 0);
                 contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getWind(), 160, 598 - i * 88, 0);
                 contentByte.showTextAligned(Paragraph.ALIGN_CENTER, demo.getStdnoise(), 324, 604 - i * 88, 0);
@@ -510,7 +510,7 @@ public class PdfService {
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 595, 0); // 측정시간
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 463, 595, 0); // 시간대
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 350, 575, 0); // 측정 위치
-            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 239, 556, 0); // 측정 거리
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 239, 556, 0); // 측정 거리
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 464, 556, 0); // 대상지역
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getNoisedivision(), 350, 535, 0); // 소음도 구분
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 159, 511, 0); // 풍속
@@ -585,7 +585,7 @@ public class PdfService {
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getCaltime(), 240, 620, 0); // 측정시간
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getTime(), 463, 620, 0); // 시간대
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getLocation(), 350, 602, 0); // 측정 위치
-            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance(), 239, 585, 0); // 측정 거리
+            contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getDistance() + " m", 239, 585, 0); // 측정 거리
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getRegion(), 464, 585, 0); // 대상지역
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getWind(), 239, 565, 0); // 풍속
 
@@ -617,8 +617,6 @@ public class PdfService {
 
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getHour(), 352, 730, 0);
             contentByte.showTextAligned(Paragraph.ALIGN_CENTER, dto.getMinute(), 390, 730, 0);
-
-
 
             stamper.close();
             reader.close();
