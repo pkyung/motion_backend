@@ -16,7 +16,7 @@ public class ApiController {
         return apiService.getPublicApiKey();
     }
 
-    @PostMapping("googlekey")
+    @PostMapping("/googlekey")
     public String googleKey() {
         return  apiService.getGoogleApiKey();
     }
